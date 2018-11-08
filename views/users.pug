@@ -1,0 +1,34 @@
+extends base.pug
+block content
+    table
+        thead
+            th First Name
+            th Last Name
+            th Father's Name
+            th Personal ID
+            th Birthdate
+        tbody
+        for person in people
+            if person.disabled === true
+                tr(class="disabled")
+                    td=person.firstname
+                    td=person.lastname
+                    td=person.fathername || "unknown"
+                    td=person.personid
+                    td=person.birthdate || "unknown"
+                    td 
+                        a(href=`/editUser/${person.personid}`) Edit
+                    td 
+                        a(href=`/enableUser/${person.personid}`) Enable
+            else
+                tr
+                    td=person.firstname
+                    td=person.lastname
+                    td=person.fathername || "unknown"
+                    td=person.personid
+                    td=person.birthdate || "unknown"
+                    td 
+                        a(href=`/editUser/${person.personid}`) Edit
+                    td 
+                        a(href=`/disableUser/${person.personid}`) Disable
+    a(href='/') Go to the main page

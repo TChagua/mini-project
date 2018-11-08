@@ -1,0 +1,26 @@
+extends base.pug
+block content
+
+    h2= `Here is detailed information about car:`
+    table
+        tr
+            td= `It is ${car.make || "unknown"} ${car.model || "unknown"}`
+        tr
+            td= `VIN Number - ${car.VIN}`
+        tr
+            td= `License number - ${car.license}`
+        tr
+            td=`Color - ${car.color || "unknown"}`
+        tr
+            td= `Owner's ID - ${car.owner}`
+        for person in people
+            if person.personid ===car.owner
+                tr
+                    td= `Owner's name - ${person.firstname} ${person.lastname}`
+        tr
+            td 
+                a(href=`/editCar/${car.VIN}`) Edit
+        tr
+            td 
+                a(href=`/disableCar/${car.VIN}`) Disable
+    a(href='/') Go to the main page

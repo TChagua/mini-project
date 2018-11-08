@@ -1,0 +1,26 @@
+extends base.pug
+block content
+
+    h2= `Here is detailed information about user:`
+    table
+        tr
+            td= `First name - ${person.firstname}`
+        tr
+            td= `Last name - ${person.lastname}`
+        tr
+            td= `Father's name - ${person.fathername || "unknown"}`
+        tr
+            td=`ID - ${person.personid}`
+        tr
+            td= `Birthdate - ${person.birthdate || "unknown"}`
+        for car in cars
+            if car.owner === person.personid
+                tr
+                    td= `Owns ${car.make} ${car.model}, license # ${car.license}`
+        tr
+            td
+                a(href=`/editUser/${person.personid}`) Edit
+        tr
+            td
+                a(href=`/disableUser/${person.personid}`) Disable
+    a(href='/') Go to the main page

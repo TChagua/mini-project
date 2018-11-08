@@ -1,0 +1,10 @@
+extends base.pug
+block content
+    form(action=`${car.VIN}`, method="post")
+        input(type="text" value=`${car.make  || "unknown"}` name="make")
+        input(type="text" value=`${car.model  || "unknown"}` name="model")
+        input(type="text" value=`${car.VIN}` name="VIN")
+        input(type="text" value=`${car.license}` name="license")
+        input(type="text" value=`${car.owner}` name="owner")
+        input(type="color" value=`${car.color || "unknown"}` name="color")
+        input(type="submit" value=`Edit car`)

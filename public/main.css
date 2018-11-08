@@ -1,0 +1,45 @@
+body{
+    background: lightseagreen;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+} 
+.formInput{
+    margin: 10px;
+}
+.button{
+    color:white;
+    background: lightseagreen;
+    padding: 10px 15px;
+}
+.button:hover{
+    background-color: teal;
+}
+a:link, a:visited {
+    background-color: lightseagreen;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    background-color: teal;
+}
+.grid-container {
+    display: grid;
+    grid-gap:10px;
+    grid-template-areas: 
+    'people cars'
+}
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+.people{
+    grid-area:people
+}
+.cars{
+    grid-area:cars
+}

@@ -1,0 +1,37 @@
+extends base.pug
+block content
+    table
+        thead
+            th Make
+            th Model
+            th VIN Number
+            th License Number
+            th Owner ID
+            th Color
+        tbody
+        for car in cars
+            if car.disabled === true
+                tr(class="disabled")
+                    td=car.make || "unknown"
+                    td=car.model || "unknown"
+                    td=car.VIN 
+                    td=car.license
+                    td=car.owner
+                    td=car.color || "unknown"
+                    td 
+                        a(href=`/editCar/${car.VIN}`) Edit
+                    td 
+                        a(href=`/enableCar/${car.VIN}`) Enable
+            else
+                tr
+                    td=car.make || "unknown"
+                    td=car.model || "unknown"
+                    td=car.VIN 
+                    td=car.license
+                    td=car.owner
+                    td=car.color || "unknown"
+                    td 
+                        a(href=`/editCar/${car.VIN}`) Edit
+                    td 
+                        a(href=`/disableCar/${car.VIN}`) Disable
+    a(href='/') Go to the main page

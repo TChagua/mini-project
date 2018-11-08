@@ -1,0 +1,9 @@
+extends base.pug
+block content
+    form(action=`${person.personid}`, method="post")
+        input(type="text" value=`${person.firstname}` name="firstname")
+        input(type="text" value=`${person.lastname}` name="lastname")
+        input(type="text" value=`${person.fathername || "unknown"}` name="fathername")
+        input(type="number" value=`${person.personid}` name="personid")
+        input(type="text" value=`${person.birthdate || "unknown"}` name="birthdate")
+        input(type="submit" value=`Edit Person`)

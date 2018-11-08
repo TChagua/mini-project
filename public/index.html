@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="people">
+            <div>
+                <a href="/allUsers">Click here to see all users</a>
+                <form action="/byName"  method="post"> 
+                    <input type="text" placeholder="Enter full name" name="fullname">
+                    <input type="submit" value="Search by name" class="button">
+                </form>
+                <form action="/byId"  method="post">
+                    <input type="number" placeholder="Enter id" name="id">
+                    <input type="submit" value="Search by id" class="button">
+                </form>
+            </div>
+            <form method="post" action="/addPeople">
+                <input type="text" name="firstname" placeholder="Enter first name"  class="formInput" required><br>
+                <input type="text" name="lastname" placeholder="Enter last name"  class="formInput" required><br>
+                <input type="text" name="fathername" placeholder="Enter father's name"  class="formInput"><br>
+                <input type="number" name="personid" placeholder="Enter ID"  class="formInput" required><br>
+                <input type="text" name="birthdate" placeholder="Enter birthdate" class="formInput"><br>
+                <input type="submit" value="Add person" class="button">
+            </form>
+        </div>
+        <div class="cars">
+            <div>
+                <a href="/allCars">Click here to see all cars</a>
+                <form action="/byVIN"  method="post"> 
+                    <input type="text" placeholder="Enter VIN number" name="VIN">
+                    <input type="submit" value="Search by VIN" class="button">
+                </form>
+                <form action="/byLicense"  method="post">
+                    <input type="text" placeholder="Enter license number" name="license">
+                    <input type="submit" value="Search by license" class="button">
+                </form>
+            </div> 
+            <form method="post" action="/addCars">
+                <input type="text" name="make" placeholder="Enter make"  class="formInput"><br>
+                <input type="text" name="model" placeholder="Enter model"  class="formInput"><br>
+                <input type="text" name="VIN" placeholder="Enter VIN number"  class="formInput" required><br>
+                <input type="text" name="license" placeholder="Enter license number"  class="formInput" required><br>
+                <input type="color" name="color" class="formInput"><br>
+                <input type="number" name="owner" placeholder="Enter owner ID" class="formInput" required><br>
+                <input type="submit" value="Add car" class="button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
